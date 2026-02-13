@@ -272,132 +272,83 @@ body {
 
 
 
-/* --- MOBILE RESPONSIVENESS --- */
+/* --- PERFECTED MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
-    /* 1. Scale down the main pulsing heart */
+    /* 1. Heart: Substantial but not overwhelming */
     .heart-box {
-        width: 180px;
-        height: 160px;
+        width: 190px;
+        height: 170px;
     }
     .heart-box::before, .heart-box::after {
-        width: 180px;
-        height: 160px;
+        width: 190px;
+        height: 170px;
     }
-    .heart-box::before { top: -80px; }
-    .heart-box::after { left: 80px; }
+    .heart-box::before { top: -85px; }
+    .heart-box::after { left: 85px; }
 
-    /* 2. Adjust Question text size */
-    .question {
-        font-size: 28px;
-        width: 90vw; /* Keep text from hitting edges */
-    }
+    /* 2. Question: Clear and centered */
     .question-div {
-        top: 55%;
+        top: 55%; 
+        width: 100%;
+        padding: 0 55px;
+    }
+    .question {
+        font-size: 45px; /* Big enough to read easily */
+        line-height: 1.5;
     }
 
-    /* 3. Stack or scale buttons */
+    /* 3. Buttons: Positioned lower and easy to hit */
     .buttons-container {
-        gap: 15px;
-        top: 75%;
+        top: 82%; /* Lower than center, but safe from home bar */
+        gap: 20px;
         width: 100%;
         justify-content: center;
-    }
-    .btn {
-        font-size: 18px;
-        padding: 12px 30px;
-    }
-
-    /* 4. Shrink Music Button */
-    .music-btn {
-        top: 15px;
-        left: 15px;
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-
-    /* 5. Celebration Screen Adjustments */
-    .yay-text {
-        font-size: 26px;
-    }
-    .celebration-meme {
-        width: 90%; /* Make GIF fill more width on mobile */
-        max-height: 45vh;
-    }
-    .rose-pop {
-        font-size: 100px;
-    }
-    .cute-text {
-        font-size: 22px;
-        width: 85%;
-    }
-}
-
-/* --- MOBILE RESPONSIVENESS (Lowered Buttons) --- */
-@media (max-width: 768px) {
-    /* 1. Heart Scaling */
-    .heart-box {
-        width: 140px;
-        height: 125px;
-    }
-    .heart-box::before, .heart-box::after {
-        width: 140px;
-        height: 125px;
-    }
-    .heart-box::before { top: -65px; }
-    .heart-box::after { left: 65px; }
-
-    /* 2. Position the question a bit higher to make room below */
-    .question {
-        font-size: 24px;
-        width: 85vw;
-        line-height: 1.2;
-    }
-    .question-div {
-        top: 50%; /* Shifted up slightly from 52% */
-    }
-
-    /* 3. SHIFT BUTTONS DOWN */
-    .buttons-container {
-        gap: 12px;
-        top: 85%; /* Moved down from 72% to 85% */
-        width: 100%;
-        justify-content: center;
+        padding: 0 10px;
     }
     
     .btn {
-        font-size: 18px;
-        padding: 10px 25px;
-        min-width: 100px;
+        font-size: 22px; /* Large enough for thumbs */
+        padding: 12px 35px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     }
 
-    /* 4. Music Button */
-    .music-btn {
-        top: 10px;
-        left: 10px;
-        padding: 6px 12px;
-        font-size: 12px;
-    }
-
-    /* 5. Celebration Screen */
+    /* 4. Celebration Screen */
     .yay-text {
-        font-size: 24px;
+        font-size: 32px;
     }
     .celebration-meme {
-        width: 85%;
-        max-height: 40vh;
+        width: 90%;
+        max-height: 70vh;
     }
     .rose-pop {
-        font-size: 80px;
+        font-size: 120px;
     }
     .cute-text {
-        font-size: 18px;
-        width: 90%;
+        font-size: 28px;
+        width: 95%;
     }
 }
 
-/* For very small devices */
-@media (max-width: 380px) {
+/* Specific fix for narrow phones (like iPhone SE or 13 mini) */
+@media (max-width: 375px) {
+    .heart-box {
+        width: 160px;
+        height: 145px;
+    }
+    .heart-box::before { top: -75px; }
+    .heart-box::after { left: 75px; }
+
+    .question {
+        font-size: 24px;
+    }
+
     .buttons-container {
-        top: 88%; /* Even lower for tiny screens to prevent overlap */
+        top: 85%;
+        gap: 15px;
+    }
+
+    .btn {
+        font-size: 20px;
+        padding: 10px 25px;
     }
 }

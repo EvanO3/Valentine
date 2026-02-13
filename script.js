@@ -67,7 +67,7 @@ function transitionToRose(container) {
 
     roseScene.innerHTML = `
             <div class="rose-pop">🌹</div>
-            <h2 class="cute-text">Every petal represents a reason why I'm lucky to have you.</h2>
+            <h2 class="cute-text">Every petal represents a reason why I’m lucky to know you… so I was wondering, would you be my Valentine and let me add one more reason 🌸💌</h2>
         `;
 
     container.appendChild(roseScene);
