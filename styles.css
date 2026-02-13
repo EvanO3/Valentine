@@ -389,7 +389,7 @@ body {
 /* For iPhone SE / Small Screens */
 @media (max-width: 380px) {
     .question {
-        font-size: 15px;
+        font-size: 20px;
     }
     .buttons-container {
         top: 90%; /* Maximum depth */
