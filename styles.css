@@ -269,3 +269,133 @@ body {
     from { transform: translateY(30px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
+
+
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    /* 1. Scale down the main pulsing heart */
+    .heart-box {
+        width: 180px;
+        height: 160px;
+    }
+    .heart-box::before, .heart-box::after {
+        width: 180px;
+        height: 160px;
+    }
+    .heart-box::before { top: -80px; }
+    .heart-box::after { left: 80px; }
+
+    /* 2. Adjust Question text size */
+    .question {
+        font-size: 28px;
+        width: 90vw; /* Keep text from hitting edges */
+    }
+    .question-div {
+        top: 55%;
+    }
+
+    /* 3. Stack or scale buttons */
+    .buttons-container {
+        gap: 15px;
+        top: 75%;
+        width: 100%;
+        justify-content: center;
+    }
+    .btn {
+        font-size: 18px;
+        padding: 12px 30px;
+    }
+
+    /* 4. Shrink Music Button */
+    .music-btn {
+        top: 15px;
+        left: 15px;
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    /* 5. Celebration Screen Adjustments */
+    .yay-text {
+        font-size: 26px;
+    }
+    .celebration-meme {
+        width: 90%; /* Make GIF fill more width on mobile */
+        max-height: 45vh;
+    }
+    .rose-pop {
+        font-size: 100px;
+    }
+    .cute-text {
+        font-size: 22px;
+        width: 85%;
+    }
+}
+
+/* --- MOBILE RESPONSIVENESS (Deep Bottom Buttons) --- */
+@media (max-width: 768px) {
+    /* 1. Heart Size (Locked in) */
+    .heart-box {
+        width: 140px;
+        height: 125px;
+    }
+    .heart-box::before, .heart-box::after {
+        width: 140px;
+        height: 125px;
+    }
+    .heart-box::before { top: -65px; }
+    .heart-box::after { left: 65px; }
+
+    /* 2. Smaller Question Font to stop overlap */
+    .question {
+        font-size: 20px; /* Reduced from 24px */
+        width: 90vw;
+        line-height: 1.2;
+    }
+    .question-div {
+        top: 50%; /* Keeps it centered under the heart */
+    }
+
+    /* 3. Move Buttons to the absolute bottom */
+    .buttons-container {
+        gap: 15px;
+        top: 88%; /* Pushed down significantly */
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .btn {
+        font-size: 16px; /* Slightly smaller for a cleaner look */
+        padding: 8px 20px;
+        min-width: 90px;
+    }
+
+    /* 4. Celebration Screen (Meme/Rose) */
+    .yay-text {
+        font-size: 22px;
+    }
+    .celebration-meme {
+        width: 90%;
+        max-height: 40vh;
+    }
+    .rose-pop {
+        font-size: 80px;
+    }
+    .cute-text {
+        font-size: 18px;
+    }
+}
+
+/* For iPhone SE / Small Screens */
+@media (max-width: 380px) {
+    .question {
+        font-size: 15px;
+    }
+    .buttons-container {
+        top: 90%; /* Maximum depth */
+    }
+    .heart-box {
+        width: 120px;
+        height: 100px;
+    }
+}
