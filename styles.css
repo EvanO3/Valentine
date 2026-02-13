@@ -1,0 +1,271 @@
+:root {
+    --white: #ffffff;
+    --soft-pink: #ffc5e6;
+    --hot-pink: #ff257e;
+    --bright-red: #ff2644;
+    --deep-red: #d60000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--soft-pink) 0%, var(--white) 50%, var(--soft-pink) 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Floating hearts background - FIXED SPREAD */
+.hearts-background, .celebration-bg-container {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart-float, .celebration-heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    opacity: 0.3;
+    animation: float-up 8s infinite ease-in-out;
+}
+
+.heart-float::before, .celebration-heart::before {
+    content: "❤️";
+    font-size: 20px;
+}
+
+/* Distributed Hearts */
+.heart-float:nth-child(1) { left: 5%; animation-delay: 0s; }
+.heart-float:nth-child(2) { left: 15%; animation-delay: 2s; }
+.heart-float:nth-child(3) { left: 25%; animation-delay: 4s; }
+.heart-float:nth-child(4) { left: 35%; animation-delay: 1s; }
+.heart-float:nth-child(5) { left: 45%; animation-delay: 3s; }
+.heart-float:nth-child(6) { left: 55%; animation-delay: 5s; }
+.heart-float:nth-child(7) { left: 65%; animation-delay: 6s; }
+.heart-float:nth-child(8) { left: 75%; animation-delay: 7s; }
+.heart-float:nth-child(9) { left: 85%; animation-delay: 1s; }
+.heart-float:nth-child(10) { left: 95%; animation-delay: 3s; }
+
+@keyframes float-up {
+    0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.3; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(-120px) rotate(360deg); opacity: 0; }
+}
+
+/* Music button */
+.music-btn {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    background: var(--white);
+    border: 3px solid var(--hot-pink);
+    border-radius: 50px;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--deep-red);
+    z-index: 1000;
+    animation: pulse-glow 2s infinite;
+}
+
+/* Heart container (Initial) */
+.heart-container {
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.heart-box {
+    position: relative;
+    width: 250px;
+    height: 220px;
+    transform: rotate(-45deg);
+    background: linear-gradient(135deg, var(--bright-red), var(--hot-pink));
+    animation: heart-beat 1.5s infinite ease-in-out;
+}
+
+.heart-box::before, .heart-box::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 220px;
+    background: inherit;
+    border-radius: 50%;
+}
+.heart-box::before { top: -110px; left: 0; }
+.heart-box::after { left: 110px; top: 0; }
+
+@keyframes heart-beat {
+    0%, 100% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(1.08); }
+}
+
+/* Question text */
+.question-div {
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.question {
+    font-family: 'Pacifico', cursive;
+    font-size: 42px;
+    color: var(--hot-pink);
+    text-shadow: 2px 2px 10px rgba(255, 37, 126, 0.3);
+}
+
+/* Buttons */
+.buttons-container {
+    position: fixed;
+    display: flex;
+    gap: 30px;
+    top: 78%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.btn {
+    font-size: 24px;
+    font-weight: 700;
+    padding: 15px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-yes {
+    background: linear-gradient(135deg, var(--bright-red), var(--deep-red));
+    color: white;
+}
+
+.btn-no {
+    background: var(--white);
+    color: var(--hot-pink);
+    border: 3px solid var(--hot-pink);
+    position: relative; /* JS will change this to fixed on click */
+}
+
+/* CELEBRATION SCREEN - WIDER GIF */
+.result-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%; /* Wider container */
+    max-width: 800px; /* Limits size on desktop */
+}
+
+.celebration-meme {
+    width: 70%; /* Take up full width of container */
+    max-height: 60vh;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    border: 5px solid white;
+    animation: meme-appear 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.yay-text {
+    font-family: 'Pacifico', cursive;
+    font-size: 45px;
+    color: var(--hot-pink);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Rose Transition */
+.rose-pop {
+    font-size: 150px;
+    animation: rose-burst 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.5);
+}
+
+@keyframes rose-burst {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes meme-appear {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Ensure the container stays dead center */
+.result-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* The Rose Animation */
+.rose-pop {
+    font-size: 160px; /* Big and clear */
+    display: inline-block;
+    filter: drop-shadow(0 0 30px rgba(255, 38, 68, 0.5));
+    /* The magic "Bloom" animation */
+    animation: rose-bloom 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    user-select: none;
+}
+
+@keyframes rose-bloom {
+    0% { 
+        transform: scale(0) rotate(-20deg); 
+        filter: blur(10px);
+        opacity: 0;
+    }
+    60% { 
+        transform: scale(1.2) rotate(10deg); 
+        filter: blur(0px);
+        opacity: 1;
+    }
+    100% { 
+        transform: scale(1) rotate(0deg); 
+    }
+}
+
+/* The Text underneath the Rose */
+.cute-text {
+    font-family: 'Pacifico', cursive; /* Using your fancy font */
+    font-size: 32px;
+    color: var(--deep-red);
+    margin-top: 20px;
+    opacity: 0;
+    animation: fade-in-up 1s ease forwards;
+    animation-delay: 1s; /* Shows up right after the rose blooms */
+}
+
+@keyframes fade-in-up {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
