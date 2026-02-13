@@ -332,9 +332,9 @@ body {
     }
 }
 
-/* --- MOBILE RESPONSIVENESS (Deep Bottom Buttons) --- */
+/* --- MOBILE RESPONSIVENESS (Lowered Buttons) --- */
 @media (max-width: 768px) {
-    /* 1. Heart Size (Locked in) */
+    /* 1. Heart Scaling */
     .heart-box {
         width: 140px;
         height: 125px;
@@ -346,36 +346,44 @@ body {
     .heart-box::before { top: -65px; }
     .heart-box::after { left: 65px; }
 
-    /* 2. Smaller Question Font to stop overlap */
+    /* 2. Position the question a bit higher to make room below */
     .question {
-        font-size: 20px; /* Reduced from 24px */
-        width: 90vw;
+        font-size: 24px;
+        width: 85vw;
         line-height: 1.2;
     }
     .question-div {
-        top: 50%; /* Keeps it centered under the heart */
+        top: 50%; /* Shifted up slightly from 52% */
     }
 
-    /* 3. Move Buttons to the absolute bottom */
+    /* 3. SHIFT BUTTONS DOWN */
     .buttons-container {
-        gap: 15px;
-        top: 88%; /* Pushed down significantly */
+        gap: 12px;
+        top: 85%; /* Moved down from 72% to 85% */
         width: 100%;
         justify-content: center;
     }
     
     .btn {
-        font-size: 16px; /* Slightly smaller for a cleaner look */
-        padding: 8px 20px;
-        min-width: 90px;
+        font-size: 18px;
+        padding: 10px 25px;
+        min-width: 100px;
     }
 
-    /* 4. Celebration Screen (Meme/Rose) */
+    /* 4. Music Button */
+    .music-btn {
+        top: 10px;
+        left: 10px;
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    /* 5. Celebration Screen */
     .yay-text {
-        font-size: 22px;
+        font-size: 24px;
     }
     .celebration-meme {
-        width: 90%;
+        width: 85%;
         max-height: 40vh;
     }
     .rose-pop {
@@ -383,19 +391,13 @@ body {
     }
     .cute-text {
         font-size: 18px;
+        width: 90%;
     }
 }
 
-/* For iPhone SE / Small Screens */
+/* For very small devices */
 @media (max-width: 380px) {
-    .question {
-        font-size: 20px;
-    }
     .buttons-container {
-        top: 90%; /* Maximum depth */
-    }
-    .heart-box {
-        width: 120px;
-        height: 100px;
+        top: 88%; /* Even lower for tiny screens to prevent overlap */
     }
 }
