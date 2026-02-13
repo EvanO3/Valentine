@@ -101,7 +101,7 @@ function startCelebrationBackground() {
 }
 
 // --- 3. MUSIC TOGGLE (Standard) ---
-const audio = new Audio('Bryson_Tiller.mp3');
+const audio = new Audio("Rain_Dance.mp3");
 // Remember to replace the link above with your local file path if you downloaded one! e.g., 'music.mp3'
 
 musicBtn.addEventListener('click', () => {
